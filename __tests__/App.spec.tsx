@@ -1,8 +1,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 
-import { AppContainer } from "../index"
-import { App } from "../components/App"
+import { AppContainer } from "../src/index"
+import { App } from "../src/components/App"
 
 describe("#AppContainer", () => {
   it("should contain App component", () => {

@@ -35,7 +35,7 @@ export const useFetchAll = (arrayToFetch: string[]) => {
 
   async function fetchData(): Promise<any> {
     const response = await Promise.all(
-      arrayToFetch.map((url: any) =>
+      arrayToFetch.map((url: any): Promise<any> =>
         fetch(url, { mode: "cors" })
           .then(y => y.json())
           .catch(err => setError(true))
@@ -52,7 +52,7 @@ export const useFetchAll = (arrayToFetch: string[]) => {
   return { response, isLoading, isError }
 }
 
-export const inputValidator = (title: string, planets: string[]): string => {
+export const inputValidator = (title: string, planets: string[]) => {
   let error: IError<string> = {}
 
   if (!title) {

@@ -5,6 +5,7 @@ import "../styles"
 import { Movie } from "./Movie"
 import { IFilmListProps } from "./modules/FilmList.module"
 import { API_URL, useFetch, inputValidator } from "../utils"
+import { IError } from "../utils/index.module"
 // @ts-ignore
 import closeIcon from "../../assets/ARROW_CLOSE.svg"
 // @ts-ignore
@@ -15,14 +16,14 @@ export const MovieList: React.FC<IFilmListProps> = props => {
   const [title, setTitle] = React.useState("")
   const [planets, setPlanets] = React.useState([])
   const [expandForm, setExpandForm] = React.useState(false)
-  const [errorType, setErrorType] = React.useState({})
+  const [errorType, setErrorType]: [IError<string>, any] = React.useState({})
   const data = useFetch(`${API_URL.planets}`)
   const optionValues = data.response.map(planet => ({
     label: planet.name,
     value: planet.url,
   }))
 
-  function movieTitleHandler(event: any): void {
+  function movieTitleHandler(event: React.ChangeEvent<HTMLInputElement>): void {
     event.preventDefault()
     setTitle(event.target.value)
   }
@@ -31,7 +32,7 @@ export const MovieList: React.FC<IFilmListProps> = props => {
     setPlanets(input)
   }
 
-  function expandFormHandler(event): void {
+  function expandFormHandler(event: any): void {
     event.preventDefault()
     setExpandForm(!expandForm)
   }

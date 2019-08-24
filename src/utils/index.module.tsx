@@ -7,3 +7,9 @@ export interface IError<T> {
   title?: T
   planet?: T
 }
+
+export interface IResponse {
+  response?: {},
+  isLoading?: boolean,
+  isError?: boolean
+}

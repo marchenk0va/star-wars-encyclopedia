@@ -1,13 +1,14 @@
 import React from "react"
 
 import { useFetchAll } from "../utils"
-import { IPlanetTableProps } from "./modules/FilmTable.module"
+import { ITableProps, IPlanet } from "./modules/Table.module"
 import { Spinner } from "./presentational/Spinner"
 import "../styles"
 import MainRow from "./presentational/MainRow"
 
-export const Table: React.FC<IPlanetTableProps> = props => {
-  const data = useFetchAll(props.planetsURL)
+export const Table: React.FC<ITableProps> = props => {
+  const data = useFetchAll(props.planetsURL);
+  const planets = data.response;
 
   return (
     <>
@@ -17,7 +18,7 @@ export const Table: React.FC<IPlanetTableProps> = props => {
         </thead>
         {data.isLoading
           ? null
-          : data.response.map((planet: any, index: number) => (
+          : planets.map((planet: IPlanet, index: number): JSX.Element => (
               <tbody key={index}>
                 <tr>
                   <th>{planet.name}</th>
