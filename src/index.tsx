@@ -1,7 +1,13 @@
+import React from "react"
+import ReactDOM from "react-dom"
 
-import React from "react";
-import ReactDOM from "react-dom";
+import { App } from "./components/App"
+import "./styles"
 
-const App: React.FC = (): JSX.Element => <div>It Works!</div>;
+export const AppContainer = () => (
+  <div className="app">
+    <App />
+  </div>
+)
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(<AppContainer />, document.querySelector("#root"))

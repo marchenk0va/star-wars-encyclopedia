@@ -16,7 +16,8 @@ module.exports = {
       rules: [
             {
                 test: /\.(ts|js|tsx)$/,
-                use: { loader: "babel-loader" },
+                use: 
+                    ["babel-loader"],
                 exclude: /node_modules/,
             },
             {
@@ -24,13 +25,17 @@ module.exports = {
                 use: { loader: "html-loader" }
             },
             {
-                test: /\.css$/,
-                use: ["style-loader", "css-loader"]
-            }
+                test: /\.scss$/,
+                use: ["style-loader" , "css-modules-typescript-loader", "css-loader", "sass-loader" ],
+            },
+            {
+                test: /\.svg$/,
+                use: [{loader: 'file-loader'}]
+            },
         ]
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js', '.jsx', '.json' ]
+        extensions: [ '.tsx', '.ts', '.js', '.json', '.scss', '.css' ]
     },
     plugins: [htmlWebPackPlugins],
 };

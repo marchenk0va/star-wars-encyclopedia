@@ -1,0 +1,32 @@
+@keyframes rotate {
+    to {transform: rotate(-360deg);}
+}   
+
+.spinner {
+
+    &-big {
+        margin: 230px 350px;
+        width: 48px;
+        height: 48px;
+        animation: rotate 1s linear infinite;
+
+        @include breakpoint(mobile) {
+            margin: 0px;
+            padding: 100px 0 100px 0;
+        }
+    }
+
+    &-small {
+        width: 24px;
+        height: 24px;
+        padding: 70px;
+        margin-left: 275px;
+        animation: rotate 1s linear infinite;
+
+        @include breakpoint(mobile) {
+            padding: 50px;
+            margin: 0 auto;
+        }
+    }
+
+}

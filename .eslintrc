@@ -1,0 +1,22 @@
+{ 
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": "."
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "plugin:react/recommended",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+}

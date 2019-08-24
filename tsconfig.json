@@ -9,7 +9,13 @@
       "target": "es5",
       "jsx": "react",
       "allowJs": true,
-      "baseUrl": "./src",
+      "baseUrl": "./",
       "target": "esnext",
+      "paths": {
+        "*" : ["src/@t`ypes/*"]
+    }
     },
+    "files": [
+      "custom.d.ts"
+    ]
   }

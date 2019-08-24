@@ -5,32 +5,91 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "prettier": "prettier --write \"src/**/*.tsx\"",
+    "eslint-fix": "eslint --ext .js --ext .tsx \"src/**/*.tsx\"",
+    "jest": {
+      "setupFiles": [
+        "<rootDir>/test-shim.js",
+        "<rootDir>/test-setup.js"
+      ],
+      "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js"
+      ],
+      "transform": {
+        "^.+\\.(ts|tsx)$": "<rootDir>/test-preprocessor.js"
+      },
+      "testMatch": [
+        "**/__tests__/*.(ts|tsx|js)"
+      ]
+    }
   },
   "author": "Mariia Marchenkova",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "@svgr/webpack": "^4.3.2",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.18",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/webpack-env": "^1.14.0",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "css-loader": "^3.2.0",
+    "css-modules-typescript-loader": "^2.0.4",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.2.2",
+    "eslint-config-react": "^1.1.7",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "file-loader": "^4.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "prettier-loader": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-inlinesvg": "^1.1.6",
+    "react-select-plus": "^1.0.0-rc.3.patch12",
+    "react-svg-loader": "^3.0.3",
+    "react-test-renderer": "^16.9.0",
+    "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
+    "svg-inline-loader": "^0.8.0",
+    "svg-react-loader": "^0.4.6",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "url-loader": "^2.1.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
-    "@types/react-router-dom": "^4.3.4"
+    "@babel/runtime": "^7.5.5",
+    "@material-ui/core": "^4.3.3",
+    "@types/antd": "^1.0.0",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/react-select": "^3.0.3",
+    "@types/styled-components": "^4.1.18",
+    "antd": "^3.22.0",
+    "react-dropdown": "^1.6.4",
+    "react-select": "^2.0.0-beta.7",
+    "styled-components": "^4.3.2"
   }
 }

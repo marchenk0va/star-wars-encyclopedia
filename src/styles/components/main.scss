@@ -1,0 +1,33 @@
+.container {
+    width: 790px;
+    left: 205px;
+    top: 96px;
+
+    background: #E0E6EE;
+    border-radius: 8px;
+    text-align: center;
+
+    @include breakpoint(mobile) {
+        width: 343px
+    }
+
+    .logo {
+        padding-top: 30px;
+
+        @include breakpoint(mobile) {
+            width: 222px;
+        }
+    }
+
+    .footer {
+        padding: 20px;
+        text-transform: uppercase;
+        color: $footer-font-color;
+        font-family: $main-font-family;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+}

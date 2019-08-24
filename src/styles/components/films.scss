@@ -1,0 +1,123 @@
+.films {
+    list-style-type: none;
+    background-color: #E1E6ED;
+    padding: 0;
+
+    &-item {
+        display: flex;
+        padding: 14px;
+        flex-direction: column;
+        height: 100%;
+        background-color: #FFFFFF;
+        color: #2A677C;
+        margin: 22px;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: bold;
+        font-family: 'Barlow', sans-serif;
+        box-shadow: 0px 4px 12px rgba(224, 230, 238, 0.5);
+
+        @include breakpoint(mobile) {
+            font-size: 14px;
+            line-height: 15px;
+        }
+    }
+
+    &-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &-table {
+        top: 22px;
+        color: #474747;
+        width: 718px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        border-radius: 4px;
+        font-family: 'Barlow', sans-serif;
+        border-collapse: collapse;
+        background: #FFFFFF;
+
+            @include breakpoint(mobile) {
+                margin-top: 10px;
+                width: 100%;
+                display: inline-block;
+                overflow-x: auto;
+            }
+        thead {
+        
+            @include breakpoint(mobile) {
+                display: inline;
+            }
+
+            td {
+                padding: 10px;
+
+                @include breakpoint(mobile) {
+                    padding: 10px;
+                }
+            }
+        }
+
+        tbody {
+        
+            @include breakpoint(mobile) {
+                width: 465px;
+            }
+
+            &:nth-child(odd) {
+                @include breakpoint(mobile) {
+                    width: 465px;
+                    background-color: #E1E6ED;
+                }
+            }
+
+            tr {
+                @include breakpoint(mobile) {
+                    width: 465px;
+                    display: flex;
+                    padding: 5px;
+                    flex-direction: row;
+                    overflow: hidden;
+                    justify-content: stretch;
+                }
+            }
+        }
+
+        .main-row {
+            border-bottom: 1px solid #C4C4C4;
+
+            tr {
+                width: 100%;
+            }
+        }
+
+        th {
+            padding: 10px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+        }
+    
+    }
+
+    &-span {
+        display: block;
+        width: 100%;
+        border-top: 2px dashed #FFFFFF;
+        margin: 32px 0px;
+    }
+
+    &-btn {
+        @include breakpoint(mobile) {
+            width: 14px;
+            height: 15px;
+        }
+    }
+
+}
