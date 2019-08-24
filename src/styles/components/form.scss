@@ -7,7 +7,11 @@
     flex-direction: column;
 
     @include breakpoint(mobile) {
-        height: 190px;;
+        height: 190px;
+    }
+
+    @include breakpoint(large-desk) {
+        height: 240px;
     }
 
     &-input {
@@ -27,6 +31,12 @@
                 padding: 0px;
                 font-size: 10px;
             }
+
+            @include breakpoint(large-desk) {
+                padding: 0px;
+                margin-left: 92px;
+                font-size: 15px;
+            }
          }
 
         .error {
@@ -43,6 +53,12 @@
                 margin-top: 3px;
                 font-size: 10px;
                 padding: 0px;
+            }
+
+            @include breakpoint(large-desk) {
+                margin: 5px 0px 0px 86px;
+                padding: 5px;
+                font-size: 16px;
             }
          }
     }
@@ -70,6 +86,14 @@
             margin: 0px;
             margin-top: 5px;
             font-size: 13px;
+        }
+
+        @include breakpoint(large-desk) {
+            width: 80%;
+            height: 50px;
+            margin: 0px;
+            margin-top: 5px;
+            font-size: 17px;
         }
 
         &:focus {
@@ -134,6 +158,11 @@
             margin: 0px;
             margin-top: 5px;
             font-size: 13px;
+        }
+
+        @include breakpoint(large-desk) {
+            margin-top: 6px;
+            width: 80%;
         }
     }
 }

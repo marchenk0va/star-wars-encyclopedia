@@ -2,4 +2,8 @@
   @if $point == mobile {
     @media (max-width: 800px) { @content ; }
   }
+
+  @if $point == large-desk {
+    @media (min-width: 2000px) { @content; }
+  }
 }

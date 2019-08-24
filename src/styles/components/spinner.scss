@@ -14,6 +14,11 @@
             margin: 0px;
             padding: 100px 0 100px 0;
         }
+
+        @include breakpoint(mobile) {
+            width: 100px;
+            height: 100px;
+        }
     }
 
     &-small {
@@ -25,6 +30,11 @@
 
         @include breakpoint(mobile) {
             padding: 50px;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(large-desk) {
+            //padding-left: 100px;
             margin: 0 auto;
         }
     }

@@ -1,14 +1,15 @@
 .container {
     width: 790px;
-    left: 205px;
-    top: 96px;
-
     background: #E0E6EE;
     border-radius: 8px;
     text-align: center;
 
     @include breakpoint(mobile) {
-        width: 343px
+        width: 343px;
+    }
+
+    @include breakpoint(large-desk) {
+        width: 1000px;
     }
 
     .logo {
@@ -16,6 +17,11 @@
 
         @include breakpoint(mobile) {
             width: 222px;
+        }
+
+        @include breakpoint(large-desk) {
+            width: 400px;
+            padding-top: 50px;
         }
     }
 
