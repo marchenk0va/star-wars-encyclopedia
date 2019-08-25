@@ -16,13 +16,13 @@ const columnList: string[] = [
 export const MainRow = (): JSX.Element => {
   const columns = columnList.map(
     (name: string, index: number): JSX.Element => (
-      <td className="main-row-list" key={index}>
+      <th className="main-row" key={index}>
         {name}
         <span>
           <img src={Icon} />
         </span>
-      </td>
+      </th>
     )
   )
-  return <tr>{columns}</tr>
+  return <thead>{columns}</thead>
 }

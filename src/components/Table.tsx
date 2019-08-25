@@ -14,9 +14,7 @@ export const Table = ({planetsURL}) => {
   return (
     <>
       <table className="films-table">
-        <thead className="main-row">
-          <MainRow />
-        </thead>
+        <MainRow />
         {data.isLoading
           ? null
           : planets.map((planet: Planet, index: number): JSX.Element => (

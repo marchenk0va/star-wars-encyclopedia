@@ -18,8 +18,8 @@ export const Movie: React.FC<MovieProps> = ({ planetsReference, movieTitle }: Mo
   }
 
   return (
-    <div className="films-item" onClick={expandTableHandler}>
-      <div className="films-title">
+    <div className="films-item">
+      <div className="films-title" onClick={expandTableHandler}>
         <div>{movieTitle}</div>
         <div className="films-btn">
           {expandTable ? <img src={closeIcon} /> : <img src={openIcon} />}
