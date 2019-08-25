@@ -15,7 +15,7 @@
     "prettier": "prettier --write \"src/**/*.tsx\"",
     "test": "jest",
     "eslint-fix": "eslint --fix './src/**/*.tsx'",
-    "deploy": "gh-pages -d ./dist",
+    "deploy": "gh-pages -d ./docs",
     "publish-demo": "npm run build && npm run deploy"
   },
   "author": "Mariia Marchenkova",
