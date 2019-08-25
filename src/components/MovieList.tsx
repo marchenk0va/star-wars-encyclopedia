@@ -1,22 +1,23 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Select from "react-select"
 
 import "../styles"
 import { Movie } from "./Movie"
-import { IFilmListProps } from "./modules/FilmList.module"
+import { MovieListProps, MovieListType } from "./modules/MovieList.module"
 import { API_URL, useFetch, inputValidator } from "../utils"
-import { IError } from "../utils/index.module"
-// @ts-ignore
+import { Error } from "../utils/index.module"
+// tslint:disable-next-line
 import closeIcon from "../../assets/ARROW_CLOSE.svg"
-// @ts-ignore
+// tslint:disable-next-line
 import openIcon from "../../assets/ARROW_OPEN.svg"
 
-export const MovieList: React.FC<IFilmListProps> = props => {
-  let movies: any = props.filmList
+export const MovieList = (props: MovieListProps) => {
+  const movies: any = props.filmList
   const [title, setTitle] = React.useState("")
   const [planets, setPlanets] = React.useState([])
   const [expandForm, setExpandForm] = React.useState(false)
-  const [errorType, setErrorType]: [IError<string>, any] = React.useState({})
+  const [errorType, setErrorType]: [Error<string>, any] = React.useState({})
   const data = useFetch(`${API_URL.planets}`)
   const optionValues = data.response.map(planet => ({
     label: planet.name,
@@ -38,9 +39,9 @@ export const MovieList: React.FC<IFilmListProps> = props => {
   }
 
   function addMovieHandler(): void {
-    const error = inputValidator(title, planets)
+    const error = inputValidator(title)
     if (Object.keys(error).length === 0) {
-      const newMovie = {
+      const newMovie: any = {
         title: title,
         planets: planets.map(planet => planet.value),
       }
@@ -107,4 +108,8 @@ export const MovieList: React.FC<IFilmListProps> = props => {
       </div>
     </div>
   )
+}
+
+MovieList.propTypes = {
+  filmList: PropTypes.object,
 }

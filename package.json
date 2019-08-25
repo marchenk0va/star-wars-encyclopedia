@@ -14,7 +14,9 @@
     "build": "webpack --mode production",
     "prettier": "prettier --write \"src/**/*.tsx\"",
     "test": "jest",
-    "eslint-fix": "eslint --ext .js --ext .tsx \"src/**/*.tsx\""
+    "eslint-fix": "eslint --fix './src/**/*.tsx'",
+    "deploy": "gh-pages -d ./dist",
+    "publish-demo": "npm run build && npm run deploy"
   },
   "author": "Mariia Marchenkova",
   "license": "ISC",
@@ -47,6 +49,7 @@
     "eslint-loader": "^2.2.1",
     "eslint-plugin-react": "^7.14.3",
     "file-loader": "^4.2.0",
+    "gh-pages": "^2.1.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",

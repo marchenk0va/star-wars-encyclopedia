@@ -4,7 +4,7 @@ import "../styles"
 import { API_URL, useFetch } from "../utils"
 import { MovieList } from "./MovieList"
 import { Spinner } from "./presentational/Spinner"
-// @ts-ignore
+// tslint:disable-next-line
 import logo from "./../../assets/LOGO.svg"
 
 export const App: React.FC = () => {

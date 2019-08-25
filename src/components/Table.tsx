@@ -1,13 +1,14 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 import { useFetchAll } from "../utils"
-import { ITableProps, IPlanet } from "./modules/Table.module"
+import { TableProps, Planet } from "./modules/Table.module"
 import { Spinner } from "./presentational/Spinner"
 import "../styles"
-import MainRow from "./presentational/MainRow"
+import { MainRow } from "./presentational/MainRow"
 
-export const Table: React.FC<ITableProps> = props => {
-  const data = useFetchAll(props.planetsURL);
+export const Table = ({planetsURL}) => {
+  const data = useFetchAll(planetsURL);
   const planets = data.response;
 
   return (
@@ -18,7 +19,7 @@ export const Table: React.FC<ITableProps> = props => {
         </thead>
         {data.isLoading
           ? null
-          : planets.map((planet: IPlanet, index: number): JSX.Element => (
+          : planets.map((planet: Planet, index: number): JSX.Element => (
               <tbody key={index}>
                 <tr>
                   <th>{planet.name}</th>
@@ -35,4 +36,8 @@ export const Table: React.FC<ITableProps> = props => {
       {data.isLoading ? <Spinner size="small" /> : null}
     </>
   )
+}
+
+Table.propTypes = {
+  planetsURL: PropTypes.string,
 }

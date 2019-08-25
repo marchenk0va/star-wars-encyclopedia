@@ -1,3 +1,3 @@
 export type SpinnerProps = {
-  size: string
+  size: string;
 }

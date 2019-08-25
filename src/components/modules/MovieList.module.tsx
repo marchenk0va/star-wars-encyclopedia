@@ -1,7 +1,7 @@
-export type FilmList = {
-  title: string
+export type MovieListType = {
+  title: string;
 }
 
-export interface IFilmListProps {
-  filmList: FilmList
+export interface MovieListProps {
+  filmList: MovieListType;
 }

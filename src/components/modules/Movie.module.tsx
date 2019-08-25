@@ -1,4 +1,4 @@
-export interface IPlanetItemProps {
-  movieTitle: string[]
-  planetsReference: string[]
+export interface MovieProps {
+  movieTitle: string[];
+  planetsReference: string[];
 }

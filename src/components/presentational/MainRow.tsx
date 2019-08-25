@@ -1,6 +1,6 @@
 import React from "react"
 
-// @ts-ignore
+// tslint:disable-next-line
 import Icon from "../../../assets/ROW_ARROWS.svg"
 
 const columnList: string[] = [
@@ -13,7 +13,7 @@ const columnList: string[] = [
   "Population",
 ]
 
-export default () => {
+export const MainRow = (): JSX.Element => {
   const columns = columnList.map(
     (name: string, index: number): JSX.Element => (
       <td className="main-row-list" key={index}>

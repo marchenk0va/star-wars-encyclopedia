@@ -2,6 +2,8 @@
 
 Star Wars encyclopedia with data from open source API on https://swapi.co 
 
+App is deployed in GitHub Pages https://marchenk0va.github.io/star-wars-encyclopedia/
+
 ## Installation 
 
 Application has own  Webpack configuration

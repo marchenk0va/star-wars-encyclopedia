@@ -1,31 +1,31 @@
 import React from "react"
 
 import { Table } from "./Table"
-import { IPlanetItemProps } from "./modules/Film.module"
+import { MovieProps } from "./modules/Movie.module"
 import "../styles"
-// @ts-ignore
+// tslint:disable-next-line
 import closeIcon from "../../assets/ARROW_CLOSE.svg"
-// @ts-ignore
+// tslint:disable-next-line
 import openIcon from "../../assets/ARROW_OPEN.svg"
 
-export const Movie: React.FC<IPlanetItemProps> = props => {
+export const Movie: React.FC<MovieProps> = ({ planetsReference, movieTitle }: MovieProps) => {
   const [expandTable, setExpand] = React.useState(false)
-  const [planetsReference, setPlanetsReference] = React.useState({})
+  const [reference, setPlanetsReference] = React.useState({})
 
   function expandTableHandler(): void {
     setExpand(!expandTable)
-    setPlanetsReference(props.planetsReference)
+    setPlanetsReference(planetsReference)
   }
 
   return (
     <div className="films-item">
       <div className="films-title">
-        <div>{props.movieTitle}</div>
+        <div>{movieTitle}</div>
         <div className="films-btn" onClick={expandTableHandler}>
           {expandTable ? <img src={closeIcon} /> : <img src={openIcon} />}
         </div>
       </div>
-      {!expandTable ? null : <Table planetsURL={planetsReference} />}
+      {!expandTable ? null : <Table planetsURL={reference} />}
     </div>
   )
 }
