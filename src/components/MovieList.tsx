@@ -4,7 +4,7 @@ import Select from "react-select"
 
 import "../styles"
 import { Movie } from "./Movie"
-import { MovieListProps, MovieListType } from "./modules/MovieList.module"
+import { MovieListProps } from "./modules/MovieList.module"
 import { API_URL, useFetch, inputValidator } from "../utils"
 import { Error } from "../utils/index.module"
 // tslint:disable-next-line
@@ -68,9 +68,9 @@ export const MovieList = (props: MovieListProps) => {
       ))}
       <span className="films-span"></span>
       <div className="films-item">
-        <div className="films-title">
+        <div className="films-title" onClick={e => expandFormHandler(e)}>
           <div>Add movie</div>
-          <div onClick={e => expandFormHandler(e)}>
+          <div>
             {expandForm ? <img src={closeIcon} /> : <img src={openIcon} />}
           </div>
         </div>
@@ -111,5 +111,5 @@ export const MovieList = (props: MovieListProps) => {
 }
 
 MovieList.propTypes = {
-  filmList: PropTypes.object,
+  filmList: PropTypes.array,
 }

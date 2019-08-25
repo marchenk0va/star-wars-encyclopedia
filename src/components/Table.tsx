@@ -39,5 +39,5 @@ export const Table = ({planetsURL}) => {
 }
 
 Table.propTypes = {
-  planetsURL: PropTypes.string,
+  planetsURL: PropTypes.array,
 }
